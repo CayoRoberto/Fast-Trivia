@@ -1,38 +1,66 @@
-import 'package:fast_trivia/CadastrarUsuario.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-class TelaInicial extends StatefulWidget {
-  const TelaInicial({Key? key}) : super(key: key);
+class CadastrarUsuario extends StatefulWidget {
+  const CadastrarUsuario({Key? key}) : super(key: key);
 
   @override
-  State<TelaInicial> createState() => _TelaInicialState();
+  State<CadastrarUsuario> createState() => _CadastrarUsuarioState();
 }
 
-class _TelaInicialState extends State<TelaInicial> {
+class _CadastrarUsuarioState extends State<CadastrarUsuario> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   title: Text("Fast Trivia"),
+      //   backgroundColor: Color(0xff2e61ac),
+      // ),
       backgroundColor: Color(0xff03aeef),
-
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(32),
           decoration: BoxDecoration(
             //border: Border.all(width: 3, color: Colors.amber),
-              image: DecorationImage(
-                  image: AssetImage("imagens/background.png"),
+            image: DecorationImage(
+                image: AssetImage("imagens/background.png"),
                 fit: BoxFit.cover
-              ),
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
+
             children: [
+
               Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: Image.asset(("imagens/fast_trivia.png"))
+                  padding: EdgeInsets.only(top: 38, bottom: 15),
+                  child: Text(
+                      "Criar Conta",
+                      textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 38,
+                      fontWeight: FontWeight.bold
+                    ),
+                  )
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(
+                            color: Colors.black
+                        )
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    labelText: "Nome do Usuário:",
+                  ),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 20),
@@ -65,7 +93,28 @@ class _TelaInicialState extends State<TelaInicial> {
                     ),
                     filled: true,
                     fillColor: Colors.white,
-                    labelText: "Senha:",
+                    labelText: "Criar senha:",
+
+                  ),
+                  obscureText: true,
+
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: TextField(
+                  keyboardType: TextInputType.visiblePassword,
+
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(
+                            color: Colors.black
+                        )
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    labelText: "Confirmar senha:",
 
                   ),
                   obscureText: true,
@@ -77,7 +126,7 @@ class _TelaInicialState extends State<TelaInicial> {
 
                 },
                 child: Text(
-                  "Entrar",
+                  "Cadastrar",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20
@@ -86,39 +135,19 @@ class _TelaInicialState extends State<TelaInicial> {
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(10),
                     primary: Color(0xff2e61ac)
-
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: TextButton(
-                  child: Text(
-                      "Esqueceu a sua senha?",
-                    style: TextStyle(
-                      color: Colors.white
-                    ),
-                  ),
-                  onPressed:(){
-
-                  }
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: TextButton(
                     child: Text(
-                      "CADASTRE-SE",
+                      "Possuo cadastro",
                       style: TextStyle(
                           color: Colors.white
                       ),
                     ),
                     onPressed:(){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CadastrarUsuario()
-                            )
-                        );
+                        Navigator.pop(context);
                     }
                 ),
               )
