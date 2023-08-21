@@ -16,16 +16,18 @@ class _CadastrarUsuarioState extends State<CadastrarUsuario> {
       //   title: Text("Fast Trivia"),
       //   backgroundColor: Color(0xff2e61ac),
       // ),
-      backgroundColor: Color(0xff03aeef),
+      backgroundColor: Color(0xff0273bc),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(32),
           decoration: BoxDecoration(
             //border: Border.all(width: 3, color: Colors.amber),
-            image: DecorationImage(
-                image: AssetImage("imagens/background.png"),
-                fit: BoxFit.cover
-            ),
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xffa87ed8),Color(0xff0273bc)]
+              )
+
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +136,7 @@ class _CadastrarUsuarioState extends State<CadastrarUsuario> {
                 ),
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(10),
-                    primary: Color(0xff2e61ac)
+                    primary: Color(0xff7ebee7)
                 ),
               ),
               Padding(

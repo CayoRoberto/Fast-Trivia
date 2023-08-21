@@ -14,17 +14,25 @@ class _TelaInicialState extends State<TelaInicial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff03aeef),
 
+      backgroundColor: Color(0xff0273bc),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(32),
           decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xffa87ed8),Color(0xff0273bc)]
+            )
             //border: Border.all(width: 3, color: Colors.amber),
+            /*
               image: DecorationImage(
                   image: AssetImage("imagens/background.png"),
                 fit: BoxFit.cover
               ),
+
+             */
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +93,7 @@ class _TelaInicialState extends State<TelaInicial> {
                 ),
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(10),
-                    primary: Color(0xff2e61ac)
+                    primary: Color(0xff7ebee7)
 
                 ),
               ),
