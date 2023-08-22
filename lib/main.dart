@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: TelaInicial(),
-    //home: Questionario(),
+    //home: TelaInicial(),
+    home: Questionario(),
     //home: TelaPrincipal(),
     //home: CadastrarUsuario(),
   ));

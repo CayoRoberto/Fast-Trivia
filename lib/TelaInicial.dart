@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fast_trivia/CadastrarUsuario.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,8 @@ class TelaInicial extends StatefulWidget {
 }
 
 class _TelaInicialState extends State<TelaInicial> {
+
+  bool esconderSenha = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +67,7 @@ class _TelaInicialState extends State<TelaInicial> {
                 padding: EdgeInsets.only(bottom: 20),
                 child: TextField(
                   keyboardType: TextInputType.visiblePassword,
-
+                  obscureText: esconderSenha,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -74,9 +78,18 @@ class _TelaInicialState extends State<TelaInicial> {
                     filled: true,
                     fillColor: Colors.white,
                     labelText: "Senha:",
+                    suffixIcon: InkWell(
+                      onTap: (){
+                        log("pressed");
+                        setState(() {
+                          esconderSenha = !esconderSenha;
+                        });
+                      },
+                      child: Icon(esconderSenha ? Icons.visibility : Icons.visibility_off),
+                    ),
 
                   ),
-                  obscureText: true,
+
 
                 ),
               ),

@@ -51,9 +51,11 @@ class _QuestionarioState extends State<Questionario> {
                    // border: Border.all(width: 3, color: Colors.red),
                     borderRadius: BorderRadius.all(Radius.circular(20))
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Padding(padding: EdgeInsets.only(bottom: 100), child: Text("Geografia"), ),
                       Text(
                         "Quais o menor e o maior país do mundo?",
                        // textAlign: TextAlign.center,
